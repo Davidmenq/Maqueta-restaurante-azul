@@ -182,9 +182,17 @@ nav a {
 
 footer {
   grid-area: footer;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items:center;  
   border: none;
   border-radius: 0.5rem 0.5rem 0 0;
+  padding:1rem;
   background: #1d5bc0;
+}
+footer p{
+  margin:0.5rem auto;
 }
 
 @media screen and (min-width: 600px) {
