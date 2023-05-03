@@ -6,10 +6,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  color: ghostwhite;
 }
 
 
 body {
+  background: #89e8e5;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(8, 1fr);
@@ -35,7 +37,7 @@ header {
   display: flex;
   position: sticky;
   flex-direction: column;
-  background-color: #0AF794;
+  background-color: #1d5bc0;
   justify-content: space-between;
   padding: 1rem 5rem;
   align-items: center;
@@ -45,7 +47,6 @@ header {
 
 header>p {
   font-size: 2rem;
-  color: rgb(0, 0, 255);
   font-weight: 800;
   cursor: pointer;
 }
@@ -54,29 +55,29 @@ aside {
   margin-top: 1rem;
   grid-area: aside;
   border-radius: 0.5rem;
-  color: rgb(0, 0, 255);
+  color: #2089d8;
   padding: 2rem;
   border: 1px solid aliceblue;
-  background-color: lightyellow;
+  background-color: #2089d8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start
 }
 
 aside>ul>li {
+  position: relative;
   margin-bottom: 10px;
 }
 
 main {
   grid-area: main;
-  background-color: lightyellow;
+  background-color: #20bcd8;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   border-radius: 0.5rem;
-}
-
-img {
-  
-  max-height: 200px;
-  position: absolute;
+  background-image: url("https://cdn.pixabay.com/photo/2017/02/15/10/57/pizza-2068272_1280.jpg");
 }
 
 section {
@@ -88,14 +89,14 @@ section {
   font-weight: bold;
   word-wrap: normal;
   margin: auto;
-  align-items: center ;
-  background-image: url("https://cdn.pixabay.com/photo/2017/02/15/10/57/pizza-2068272_1280.jpg");
+  align-items: center;
   padding: 1rem;
 }
-section > p {
+
+section>p {
   padding: 1rem;
   font-weight: bolder;
-  text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+  text-shadow: 0px 0px 10px rgb(0, 0, 0);
   font-size: 1rem;
 }
 
@@ -106,6 +107,7 @@ section:first-child {
 button {
   border: none;
   padding: 0.25rem;
+  background: #2089d8;
 }
 
 nav {
@@ -119,58 +121,75 @@ nav a {
   margin-right: 10px;
 }
 
-
-
 .Tarjeta1 {
   grid-area: Tarjeta1;
-  background-color: lightyellow;
+  background-color: #20bcd8;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 }
 
 .imagen-comida {
-  width: 100px;
+  position: relative;
+  width: 300px;
+  border-radius: 0.5rem;
+  margin: 0.3rem auto;
 }
 
+.descripcion-comida {
+  margin: 0.5rem auto;
+}
 
 .Tarjeta2 {
   grid-area: Tarjeta2;
-  background-color: lightyellow;
+  background-color: #20bcd8;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 }
 
 .Tarjeta3 {
   grid-area: Tarjeta3;
-  background-color: lightyellow;
+  background-color: #20bcd8;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 }
 
 .Tarjeta4 {
   grid-area: Tarjeta4;
-  background-color: lightyellow;
+  background-color: #20bcd8;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 }
 
 footer {
   grid-area: footer;
-  border: 2px solid black;
+  border: none;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background: #1d5bc0;
 }
 
 @media screen and (min-width: 600px) {
   body {
-    grid-template-columns: repeat(6, 1fr);
+    /* grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
     gap: 0.25rem;
     grid-template-areas:
@@ -179,7 +198,14 @@ footer {
       ". aside main main main ."
       ". aside main main main ."
       ". Tarjeta1 Tarjeta2 Tarjeta3 Tarjeta4 ."
-      ". footer footer footer footer .";
+      ". footer footer footer footer ."; */
+    grid-template:
+      "header header header header header header" 1fr
+      ". aside main main main ." 3fr
+      ". Tarjeta1 Tarjeta2 Tarjeta3 Tarjeta4 ." 2fr
+      ". footer footer footer footer ." 1fr /
+      1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.25rem;
   }
 
   nav {
@@ -189,6 +215,9 @@ footer {
 
   header {
     flex-direction: row;
-    padding: 2rem;
+    padding: 2rem 10rem;
+  }
+  .imagen-comida {
+    width: 200px;
   }
 }
